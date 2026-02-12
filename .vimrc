@@ -166,7 +166,7 @@ set noshowmode
 set shortmess+=I
 set number
 set cursorline
-set viminfo='100,n$HOME/.vim/files/info/viminfo
+set viminfo='100,n$HOME/.viminfo
 set grepprg=rg\ --vimgrep
 set shellslash
 
