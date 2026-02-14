@@ -234,12 +234,11 @@ endfunction
 
 set statusline=\ %{winnr()}\ \ %{StatuslineMode()}\ \ %F%m%r%h\ \ %l:%c\ %P\ %=\ %{&fileencoding}\ %{&fileformat}\ %{&filetype}\ 
 
+set background=dark
 try
-    colorscheme desert
+    colorscheme catppuccin
 catch
 endtry
-
-set background=dark
 
 " Remap VIM 0 to first non-blank character
 map 0 ^
