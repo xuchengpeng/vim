@@ -212,24 +212,11 @@ set laststatus=2
 
 " Format the status line
 function! StatuslineMode()
-    let l:mode=mode()
-    if l:mode==#"n"
-        return "NORMAL"
-    elseif l:mode==?"v"
-        return "VISUAL"
-    elseif l:mode==#"i"
-        return "INSERT"
-    elseif l:mode==#"R"
-        return "REPLACE"
-    elseif l:mode==?"s"
-        return "SELECT"
-    elseif l:mode==#"t"
-        return "TERMINAL"
-    elseif l:mode==#"c"
-        return "COMMAND"
-    elseif l:mode==#"!"
-        return "SHELL"
-    endif
+    let l:mode_map = {
+        \ 'n': 'NORMAL', 'i': 'INSERT', 'R': 'REPLACE', 'v': 'VISUAL', 'V': 'V-LINE', "\<C-v>": 'V-BLOCK',
+        \ 'c': 'COMMAND', 's': 'SELECT', 'S': 'S-LINE', "\<C-s>": 'S-BLOCK', 't': 'TERMINAL'
+        \}
+    return get(l:mode_map, mode(), '')
 endfunction
 
 set statusline=\ %{winnr()}\ \ %{StatuslineMode()}\ \ %F%m%r%h\ \ %l:%c\ %P\ %=\ %{&fileencoding}\ %{&fileformat}\ %{&filetype}\ 
