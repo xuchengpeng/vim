@@ -225,6 +225,7 @@ set background=dark
 try
     colorscheme catppuccin
 catch
+    colorscheme desert
 endtry
 
 " Remap VIM 0 to first non-blank character
